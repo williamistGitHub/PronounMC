@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "pronounmc",
+  "version": "${version}",
+  "name": "PronounMC",
+  "description": "Never get someone's pronouns wrong again! Powered by pronoundb.org",
+  "authors": [
+    "williamist"
+  ],
+  "contact": {
+    "repo": "https://github.com/williamistGitHub/PronounMC"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/pronounmc/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "tech.williamist.pronounmc.client.PronounMCClient"
+    ],
+    "main": [
+      "tech.williamist.pronounmc.PronounMC"
+    ]
+  },
+  "mixins": [
+    "pronounmc.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.6",
+    "minecraft": "1.20.4"
+  }
+}
