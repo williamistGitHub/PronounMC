@@ -14,19 +14,13 @@
   "icon": "assets/pronounmc/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [
-      "tech.williamist.pronounmc.client.PronounMCClient"
-    ],
-    "main": [
-      "tech.williamist.pronounmc.PronounMC"
-    ]
+    "main": []
   },
   "mixins": [
     "pronounmc.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.6",
-    "minecraft": "1.20.4",
-    "fabric-api": "*"
+    "minecraft": "1.20.x"
   }
 }
