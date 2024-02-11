@@ -23,6 +23,12 @@ public final class PronounCache {
 
     public static void clear() {
         CACHE.clear();
+        nextRequestTime = 0;
+        if (thread != null && thread.isAlive()) {
+            thread.interrupt();
+            thread = null;
+        }
+        REQUEST_TRIES.clear();
     }
 
     public static HashMap<UUID, String> getPronounsFor(UUID... uuids) {
