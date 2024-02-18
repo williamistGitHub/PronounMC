@@ -126,7 +126,15 @@ public final class PronounDB {
             return null;
 
         for (UUID uuid : lookupResult.keySet()) {
-            outMap.put(uuid, String.join("/", lookupResult.get(uuid).get(locale)));
+            HashMap<Locale, String[]> localeMap = lookupResult.get(uuid);
+
+            // this happens when a user has their account linked, but has no pronouns set
+            // (so uh, fairly rare, glad i caught it lol)
+            if (!localeMap.containsKey(locale)) {
+                outMap.put(uuid, "unset");
+            } else {
+                outMap.put(uuid, String.join("/", localeMap.get(locale)));
+            }
         }
 
         return outMap;
